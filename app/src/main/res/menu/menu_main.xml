@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_limpiar"
+        android:title="Limpiar"
+        android:orderInCategory="0"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/action_listaArticulos"
+        android:title="Lista Articulos"
+        android:orderInCategory="1"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/action_listaArticulos1"
+        android:title="Lista Articulos 1"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/action_recyclerview"
+        android:title="RecyclerView"
+        android:orderInCategory="3"
+        app:showAsAction="never"
+        />
+</menu>

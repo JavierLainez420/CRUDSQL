@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConsultSpinner"
+    android:background="@drawable/f2"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccione una opcion"
+        android:layout_marginTop="25dp"
+        android:textColor="#FFEB3B"
+        android:textSize="20dp"
+        android:fontFamily="cursive"
+        android:textAlignment="center"
+        />
+
+    <Spinner
+        android:id="@+id/opciones"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/disespinner"
+        android:spinnerMode="dropdown"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_cod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Código"
+            android:textColor="#FFEB3B"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:textColor="#FFEB3B"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/tv_preciospi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:textColor="#FFEB3B"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
