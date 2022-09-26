@@ -172,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(recyclerview);
             return true;
         }else if (id==R.id.action_acercade){
-            new AcercaDe(context);
-
+           Intent acerca = new  Intent(MainActivity.this,AcercaDe.class);
+startActivity(acerca);
             return true;
 
 
@@ -315,5 +315,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void acercade(View view) {
-        new AcercaDe(context);
+
 }}
