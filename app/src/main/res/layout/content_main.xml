@@ -71,6 +71,27 @@
 
                 />
 
+            <EditText
+                android:id="@+id/etIDCAT"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_margin="20dp"
+                android:background="#A6D5D212"
+                android:hint="Ingrese el codigo "
+                android:textColorHint="@color/black" />
+
+            <Spinner
+                android:id="@+id/opciones"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_margin="20dp"
+                android:background="#A6D5D212"
+                android:spinnerMode="dropdown"
+                android:outlineSpotShadowColor="@color/black"
+                android:outlineAmbientShadowColor="@color/black"
+
+                />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnGuardar"
                 android:layout_margin="10dp"

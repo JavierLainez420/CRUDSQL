@@ -5,17 +5,18 @@
       <map>
         <entry key="..\:/Users/Admin/Documents/CRUDSQL/app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/drawable/circulo1.xml" value="0.1" />
-        <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_acerca_de.xml" value="0.22" />
+        <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_acerca_de.xml" value="0.25" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_consulta_spinner.xml" value="0.25" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_detalles_articulos.xml" value="0.18" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_list_view_articulos.xml" value="0.25" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_recycler_view.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/activity_vista_principal.xml" value="0.2125" />
-        <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/content_main.xml" value="0.1033434650455927" />
+        <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/content_main.xml" value="0.18" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/list_recyclerview.xml" value="0.1" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/layout/ventana1.xml" value="0.10106382978723404" />
         <entry key="..\:/Users/Javier420/AndroidStudioProjects/CRUD_SQL/app/src/main/res/menu/menu_main.xml" value="0.2078125" />
+        <entry key="..\:/Users/Javier420/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.22447916666666667" />
       </map>
     </option>
   </component>

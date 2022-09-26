@@ -25,7 +25,7 @@ public class consulta_recyclerView extends AppCompatActivity {
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
        // adaptadorArticulos = new AdaptadorArticulos(consulta_recyclerView.this,obtenerArticulos());
-        adaptadorArticulos = new AdaptadorArticulos(consulta_recyclerView.this, datos.mostrarArticulos());
+      //  adaptadorArticulos = new AdaptadorArticulos(consulta_recyclerView.this, datos.mostrarArticulos());
         recycler.setAdapter(adaptadorArticulos);
     }
 

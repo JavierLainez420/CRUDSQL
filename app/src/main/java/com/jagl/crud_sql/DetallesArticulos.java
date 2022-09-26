@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class DetallesArticulos extends AppCompatActivity {
 
-    private TextView tv_codigo, tv_descripcion, tv_precio;
+    private TextView tv_codigo, tv_descripcion, tv_precio, tv_idcat,tvidcat1;
     private  TextView tv_codigo1, tv_descripcion1, tv_precio1, tv_fecha;
 
 
@@ -28,6 +28,8 @@ public class DetallesArticulos extends AppCompatActivity {
         tv_descripcion1 = findViewById(R.id.tv_descripcion1);
         tv_precio1 = findViewById(R.id.tv_precio1);
         tv_fecha = findViewById(R.id.tv_fecha);
+        tv_idcat = findViewById(R.id.tvidcat);
+        tvidcat1 = findViewById(R.id.tv_idcat);
 
         Bundle objeto = getIntent().getExtras();
         Dto dto = null;
@@ -36,7 +38,9 @@ public class DetallesArticulos extends AppCompatActivity {
             tv_codigo.setText("" + dto.getCodigo());
             tv_descripcion.setText(dto.getDescripcion());
             tv_precio.setText(String.valueOf(dto.getPrecio()));
+            tv_idcat.setText(String.valueOf(dto.getIdcategoria()));
 
+            tvidcat1.setText(String.valueOf(dto.getIdcategoria()));
             tv_codigo1.setText(""+ dto.getCodigo());
             tv_descripcion1.setText(dto.getDescripcion());
             tv_precio1.setText(String.valueOf(dto.getPrecio()));

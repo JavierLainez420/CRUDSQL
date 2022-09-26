@@ -17,7 +17,6 @@ public class Dto implements Serializable {
         this.descripcion = descripcion;
         this.precio = precio;
         this.idcategoria = idcategoria;
-
     }
 
     public int getCodigo() {
@@ -42,5 +41,13 @@ public class Dto implements Serializable {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public int getIdcategoria() {
+        return idcategoria;
+    }
+
+    public void setIdcategoria(int idcategoria) {
+        this.idcategoria = idcategoria;
     }
 }

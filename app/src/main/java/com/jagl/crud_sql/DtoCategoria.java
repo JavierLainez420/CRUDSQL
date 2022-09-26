@@ -47,7 +47,7 @@ public class DtoCategoria {
         return fecharegistro;
     }
 
-    public void setFecharegistro(String  fecharegistro) {
+    public void setFecharegistro(String fecharegistro) {
         this.fecharegistro = fecharegistro;
     }
 }

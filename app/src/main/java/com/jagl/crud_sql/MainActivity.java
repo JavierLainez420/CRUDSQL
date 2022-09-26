@@ -8,26 +8,34 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-    private EditText et_codigo, et_descripcion, et_precio;
+    private EditText et_codigo, et_descripcion, et_precio, et_id;
     private Button btn_guardar, btn_consultar1, btn_consultar2, btn_eliminar, btn_actualizar, btnacercade, salir;
     private TextView tv_resultado;
+    private Spinner spIdCat;
 
     boolean inputEt = false;
     boolean inputEd = false;
     boolean input1 = false;
+    boolean inputidcat = false;
     int resultadoInsert = 0;
 
 
@@ -61,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        context = this;
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_close));
@@ -98,29 +108,51 @@ public class MainActivity extends AppCompatActivity {
         btn_consultar2 = findViewById(R.id.btnConsultaDes);
         btn_eliminar = findViewById(R.id.btnGuardar);
         btn_actualizar = findViewById(R.id.btnEditar);
+        et_id = findViewById(R.id.etIDCAT);
+        spIdCat = findViewById(R.id.opciones);
 
         String senal = "";
         String codigo = "";
         String descripcion = "";
         String precio = "";
+        String idcategoria = "";
+
+        //ArrayList<String> lista2 = conexion.obtenercategoria();
+
 
         try {
+
+           conexion.consultaListaCategorias();
+
+            ArrayAdapter<CharSequence> adaptador = new ArrayAdapter (this, android.R.layout.simple_list_item_1, conexion.obtenercategoria());
+            spIdCat.setAdapter(adaptador);
+
+
             Intent intent = getIntent();
             Bundle bundle = intent.getExtras();
             if (bundle != null) {
                 codigo = bundle.getString("codigo");
                 senal = bundle.getString("senal");
-                descripcion = bundle.getString("descripcion");
                 precio = bundle.getString("precio");
+                idcategoria = bundle.getString("idcategoria");
                 if (senal.equals("1")){
                     et_codigo.setText(codigo);
                     et_descripcion.setText(descripcion);
                     et_precio.setText(precio);
+                    et_id.setText(idcategoria);
+
+
                 }
             }
         }catch (Exception e){
 
         }
+
+        //
+        //Cargar Spinner
+        //
+
+
     }
 
     private void confirmacion(){
@@ -172,13 +204,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(recyclerview);
             return true;
         }else if (id==R.id.action_acercade){
-           Intent acerca = new  Intent(MainActivity.this,AcercaDe.class);
-startActivity(acerca);
+
+            new AcercaDe(context);
             return true;
 
 }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
     public void guardar(View view) {
         if (et_codigo.getText().toString().length()==0){
@@ -199,11 +234,44 @@ startActivity(acerca);
         }else {
             input1 = true;
         }
-        if (inputEt && inputEd && input1){
+        /*if (et_codigo.getText().toString().length()==0){
+            et_codigo.setError("Campo obligatorio");
+            inputidcat = false;
+        }else {
+            inputidcat = true;
+
+        }*/
+
+       if (spIdCat.getSelectedItemPosition() == 0){
+            //et_id.setError("Campo obligatorio");
+           inputidcat = false;
+        }else {
+            inputidcat = true;
+        }
+        if (inputEt && inputEd && input1 && inputidcat){
             try {
+
+                spIdCat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        int idcat =  spIdCat.getSelectedItemPosition();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+
+
                 datos.setCodigo(Integer.parseInt(et_codigo.getText().toString()));
                 datos.setDescripcion(et_descripcion.getText().toString());
                 datos.setPrecio(Double.parseDouble(et_precio.getText().toString()));
+              //  datos.setIdcategoria(Integer.parseInt(et_id.getText().toString()));
+               //+ int valueinInt=(int)(spIdCat.getSelectedItem());
+            //    datos.setIdcategoria(Integer.parseInt(spIdCat.getItemIdAtPosition());
+
+                //  datos.setIdcategoria(Integer.parseInt(spIdCat.getSelectedItem().toString()));
 
                 if (conexion.InserTradicional(datos)){
                     Toast.makeText(this, "Registro agregado satisfactoriamente!", Toast.LENGTH_SHORT).show();

@@ -59,6 +59,7 @@ public class ListViewArticulos extends AppCompatActivity {
                 String informacion = "Codigo: " + conexion.consultaListaArticulos().get(i).getDescripcion() + "\n";
                 informacion += "Descripcion: " + conexion.consultaListaArticulos().get(i).getDescripcion() + "\n";
                 informacion += "Precio: "+conexion.consultaListaArticulos().get(i).getPrecio();
+                informacion += "ID Categoria: "+conexion.consultaListaArticulos().get(i).getIdcategoria();
 
                 Dto articulos = conexion.consultaListaArticulos().get(i);
                 Intent intent = new Intent(ListViewArticulos.this, DetallesArticulos.class);
