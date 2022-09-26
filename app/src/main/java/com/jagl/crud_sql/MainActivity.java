@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ConexionSQLite conexion = new ConexionSQLite(this);
     Dto datos = new Dto();
     AlertDialog.Builder dialogo;
+    private Context context;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -169,7 +171,13 @@ public class MainActivity extends AppCompatActivity {
             Intent recyclerview = new Intent(MainActivity.this, consulta_recyclerView.class);
             startActivity(recyclerview);
             return true;
-        }
+        }else if (id==R.id.action_acercade){
+            new AcercaDe(context);
+
+            return true;
+
+
+}
         return super.onOptionsItemSelected(item);
     }
 
@@ -305,4 +313,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-}
+
+    public void acercade(View view) {
+        new AcercaDe(context);
+}}

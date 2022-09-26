@@ -33,5 +33,15 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@mipmap/ic_lupa_foreground"
         />
+    <Button
+        android:id="@+id/btnAcercade"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:text="Acerca de"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:onClick="acercade"
+        android:backgroundTint="@color/teal_200"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
