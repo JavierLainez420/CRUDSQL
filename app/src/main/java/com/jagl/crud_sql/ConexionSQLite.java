@@ -30,19 +30,17 @@ public class ConexionSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table articulos(codigo integer not null primary key, descripcion text, precio real, idcategoria integer, " +
-                "FOREIGN KEY(idcategoria) REFERENCES articulos(idcategoria))");
-        sqLiteDatabase.execSQL("create table tb_categorias(id_categoria integer not null primary key, nombrecategoria text, estado integer,fecharegistro date)");
 
-        sqLiteDatabase.execSQL("insert into tb_categoria values('1', 'Laptop', '1', '22/04/2022')");
+        sqLiteDatabase.execSQL("create table tb_categorias (idcategoria integer(11) not null primary key, nombrecategoria varchar(50) not null, estadocategoria integer(11) not null, fecharegistro datetime not null)");
+        sqLiteDatabase.execSQL("create table tb_productos (codigo integer(11) not null primary key, descripcion varchar(100) not null, precio real not null, idcategoria integer(11) not null, FOREIGN KEY(idcategoria) REFERENCES tb_categorias(idcategoria))");
+
+        sqLiteDatabase.execSQL("insert into tb_categorias values(1, 'Smartphone', 1, datetime('now','localtime')), (2, 'Tablets', 1, datetime('now','localtime')), (3, 'Computadora', 1, datetime('now','localtime')) ");
+        sqLiteDatabase.execSQL("insert into tb_productos values(1, 'Samsung Galaxy S6+', 255.0, 1), (2, 'Galaxy Tab S7+', 300.10, 2), (3, 'Laptop Toshiba Satellite A135-s2276', 599, 3)");
     }
-
-
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("drop table if exists articulos");
-        sqLiteDatabase.execSQL("drop table if exists categorias");
         onCreate(sqLiteDatabase);
     }
 
@@ -360,7 +358,7 @@ public class ConexionSQLite extends SQLiteOpenHelper {
         return listaArticulos;
     }
 
-    public List<Dto> mostrarArticulos(){
+   /* public List<Dto> mostrarArticulos(){
         SQLiteDatabase bd = this.getReadableDatabase();
         Cursor cursor = bd.rawQuery("SELECT * FROM articulos order by codigo desc",null);
         List<Dto> articulos = new ArrayList<>();
@@ -371,6 +369,6 @@ public class ConexionSQLite extends SQLiteOpenHelper {
             } while (cursor.moveToFirst());
         }
         return articulos;
-    }
+    }*/
 
 }

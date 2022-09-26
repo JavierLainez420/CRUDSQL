@@ -7,14 +7,17 @@ public class Dto implements Serializable {
     int codigo;
     String descripcion;
     double precio;
+    int idcategoria;
 
     public Dto() {
     }
 
-    public Dto(int codigo, String descripcion, double precio) {
+    public Dto(int codigo, String descripcion, double precio, int idcategoria) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.idcategoria = idcategoria;
+
     }
 
     public int getCodigo() {
