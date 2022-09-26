@@ -24,4 +24,10 @@
         android:orderInCategory="3"
         app:showAsAction="never"
         />
+
+    <item android:id="@+id/action_acercade"
+        android:title="acercade"
+        android:orderInCategory="4"
+        app:showAsAction="never"
+        />
 </menu>

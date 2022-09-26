@@ -30,14 +30,19 @@ public class ConexionSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table articulos(codigo integer not null primary key, " +
-                "descripcion text, precio real)");
+        sqLiteDatabase.execSQL("create table articulos(codigo integer not null primary key, descripcion text, precio real, idcategoria integer, " +
+                "FOREIGN KEY(idcategoria) REFERENCES articulos(idcategoria))");
+        sqLiteDatabase.execSQL("create table tb_categorias(id_categoria integer not null primary key, nombrecategoria text, estado integer,fecharegistro date)");
 
+        sqLiteDatabase.execSQL("insert into tb_categoria values('1', 'Laptop', '1', '22/04/2022')");
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("drop table if exists articulos");
+        sqLiteDatabase.execSQL("drop table if exists categorias");
         onCreate(sqLiteDatabase);
     }
 

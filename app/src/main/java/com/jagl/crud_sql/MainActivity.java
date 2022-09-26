@@ -21,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
     private EditText et_codigo, et_descripcion, et_precio;
-    private Button btn_guardar, btn_consultar1, btn_consultar2, btn_eliminar, btn_actualizar;
+    private Button btn_guardar, btn_consultar1, btn_consultar2, btn_eliminar, btn_actualizar, btnacercade, salir;
     private TextView tv_resultado;
 
     boolean inputEt = false;
