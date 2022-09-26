@@ -176,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
 startActivity(acerca);
             return true;
 
-
 }
         return super.onOptionsItemSelected(item);
     }
